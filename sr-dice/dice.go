@@ -79,7 +79,7 @@ func main() {
 				fmt.Println("Juice Found")
 
 			case compute%2 == 1:
-				fmt.Println("Half Quantity foun")
+				fmt.Println("Half Quantity fou")
 
 			}
 		}
