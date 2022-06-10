@@ -19,6 +19,44 @@ package main
 
 import "fmt"
 
-func main() {
+type Rectangle struct {
+	length int
+	width  int
+}
 
+func rectangle(class Rectangle) {
+	fmt.Println(class.length * class.width)
+
+}
+
+func perimeter(class Rectangle) {
+	fmt.Println(class.length + class.width)
+}
+
+type Name struct {
+	first string
+	last  string
+}
+
+func insertName(class Name) {
+	fmt.Println(class.first, class.last)
+}
+
+func main() {
+	var Calculates Rectangle
+	Calculates.length = 5
+	Calculates.width = 5
+	calc := Calculates.length * Calculates.width
+	fmt.Println(calc)
+
+	var Sum Rectangle
+	Sum.length = 5
+	Sum.width = 7
+	calcPerimeter := Sum.length + Sum.width
+	fmt.Println(calcPerimeter)
+
+	rectangle(Rectangle{length: 5, width: 5})
+	perimeter((Rectangle{length: 7, width: 7}))
+
+	insertName(Name{first: "Suren", last: "Ravi"})
 }
