@@ -18,6 +18,72 @@ package main
 
 import "fmt"
 
+type Shopping struct {
+	name  string
+	price int
+}
+
+func shoppingList(shop [4]Shopping) {
+	for i := 0; i < len(shop); i++ {
+		shops := shop[i]
+		fmt.Println(shops.name)
+	}
+}
+
+func setPrice(pricez [4]Shopping) {
+	for j := 0; j < len(pricez); j++ {
+		prices := pricez[j]
+		fmt.Println(prices.price)
+	}
+}
+
+func sum(total [4]Shopping) {
+	fmt.Println(total)
+}
+
+func total(class Shopping) {
+	fmt.Println(class.price + class.price)
+}
+
+type Cart struct {
+	name      string
+	available bool
+}
+
+func cartAvailable(cart [4]Cart) {
+	for k := 0; k < len(cart); k++ {
+		carts := cart[k]
+		fmt.Println(carts)
+	}
+}
+
 func main() {
+	shops := [...]Shopping{
+		{name: "producta"},
+		{name: "productb"},
+		{name: "productc"},
+		{name: "productd"},
+	}
+
+	prices := [...]Shopping{
+		{price: 25},
+		{price: 35},
+		{price: 45},
+		{price: 55},
+	}
+
+	carts := [...]Cart{
+		{name: "Master", available: true},
+		{name: "Visa", available: false},
+		{name: "Mastero", available: true},
+		{name: "default", available: true},
+	}
+
+	shoppingList(shops)
+	setPrice(prices)
+	cartAvailable(carts)
+	fmt.Println(carts[1])
+
+	total(Shopping{price: 25})
 
 }
