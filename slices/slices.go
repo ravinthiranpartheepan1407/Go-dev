@@ -18,5 +18,32 @@ import "fmt"
 
 type Part string
 
+func assemblyType(assembly string, part []string) {
+	for i := 0; i < len(part); i++ {
+		out := part[i]
+		fmt.Println("The Part Number is:", out)
+	}
+}
+
+func fruitTotal(name string, fruit []string) {
+	for j := 0; j < len(fruit); j++ {
+		cuts := fruit[j]
+		fmt.Println("Total Cuts:", cuts)
+	}
+}
+
 func main() {
+	assemblyPart := []string{"First Part", "Second Part", "Third Part"}
+	assemblyType("Part 1", assemblyPart)
+	assemblyPart = append(assemblyPart, "Fourth Part", "Fifth Part")
+	fmt.Println("Part 2", assemblyPart)
+	assemblyPart3 := assemblyPart[3:]
+	fmt.Println("Part 3 :", assemblyPart3)
+
+	fruitNames := []string{"Watermelon", "Banana", "Strawberry"}
+	fruitTotal("Fruit", fruitNames)
+	fruitNames = append(fruitNames, "Kiwi", "Mango")
+	fmt.Println("Added Fruits:", fruitNames)
+	fruitCutted := fruitNames[1:]
+	fmt.Println("Cutted Fruits:", fruitCutted)
 }
