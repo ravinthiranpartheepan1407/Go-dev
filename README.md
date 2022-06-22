@@ -6,3 +6,4 @@ variables.go
 functions.go
 dice.go
 struct.go
+array.go
