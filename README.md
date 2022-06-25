@@ -7,3 +7,5 @@ functions.go
 dice.go
 struct.go
 array.go
+ranges.go
+slices.go
