@@ -16,12 +16,44 @@ package main
 
 import "fmt"
 
+type Calculation int
+
+const (
+	add Calculation = iota
+	subtract
+	multiply
+	divide
+)
+
+func (calc Calculation) total(a, b int) int {
+	switch calc {
+	case add:
+		return a + b
+
+	case subtract:
+		return a - b
+
+	case multiply:
+		return a * b
+
+	case divide:
+		return a / b
+	}
+	panic("Unhandled Error")
+}
+
 func main() {
-	fmt.Println(add.calculate(2, 2)) // = 4
 
-	fmt.Println(sub.calculate(10, 3)) // = 7
+	addition := Calculation(add)
+	subtraction := Calculation(subtract)
+	multiplication := Calculation(multiply)
+	division := Calculation(divide)
 
-	fmt.Println(mul.calculate(3, 3)) // = 9
+	fmt.Println(addition.total(2, 2)) // = 4
 
-	fmt.Println(div.calculate(100, 2)) // = 50
+	fmt.Println(subtraction.total(10, 3)) // = 7
+
+	fmt.Println(multiplication.total(3, 3)) // = 9
+
+	fmt.Println(division.total(100, 2)) // = 50
 }

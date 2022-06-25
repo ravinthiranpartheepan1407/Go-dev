@@ -18,6 +18,42 @@ package main
 
 import "fmt"
 
-func main() {
+type Items struct {
+	items    string
+	security bool
+}
 
+type Securitytags struct {
+	activate   bool
+	deactivate bool
+}
+
+func itemList(class Items) {
+	fmt.Println(class.items)
+}
+
+func activate(act *Items) {
+	itemString := make(map[string]int)
+	itemString["Item A"]
+	itemString["Item B"]
+	itemString["Item C"]
+	itemString["Item D"]
+	itemList(Items{items: "Golang"})
+	print(itemString)
+
+	activation = &security
+	activation := act.security
+	activation = true
+	act.security = activation
+	result := act.security
+	fmt.Println(result)
+}
+
+func deactivate(deact *Items) {
+	delete(Items.items)
+}
+
+func main() {
+	out := activate()
+	fmt.Println(out)
 }
