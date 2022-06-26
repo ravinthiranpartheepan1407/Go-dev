@@ -9,3 +9,8 @@ struct.go
 array.go
 ranges.go
 slices.go
+pointers.go
+iota.go
+receiver-function.go
+pkgs.go
+
