@@ -21,6 +21,44 @@ package main
 
 import "fmt"
 
+type Shop interface {
+	available()
+}
+
+type Motorcycles string
+type Cars string
+type Trucks string
+
+func (m Motorcycles) available() {
+	// data := "Hero Honda"
+	// fmt.Printf("The Motorcycle model is(%v)", data)
+	fmt.Println("Motorcycle Model")
+}
+
+func (c Cars) available() {
+	// data := "Baleno"
+	// fmt.Printf("The car model is(%v)", data)
+	fmt.Println("Car Model")
+}
+
+func (t Trucks) available() {
+	// data := "Lorry"
+	// fmt.Printf("The truck model is(%v)", data)
+	fmt.Println("Truck Model")
+}
+
+func handleVehicle(details []Shop) {
+	fmt.Println("Get vehicle details")
+	for i := 0; i < len(details); i++ {
+		detail := details[i]
+		fmt.Printf("The vehicles detail(%v)", detail)
+		detail.available()
+	}
+}
+
 func main() {
+
+	out := []Shop{Motorcycles("Hero Honda"), Cars("Baleno"), Trucks("Lorry")}
+	handleVehicle(out)
 
 }
