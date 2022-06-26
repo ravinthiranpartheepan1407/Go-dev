@@ -13,4 +13,7 @@ pointers.go
 iota.go
 receiver-function.go
 pkgs.go
+testing__test.go
+interface.go
+errorhandle
 
