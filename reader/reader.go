@@ -18,8 +18,121 @@
 
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"os"
+	"strconv"
+	"strings"
+)
+
+const (
+	hello = "Hello"
+	hi    = "Hi"
+)
+
+type Book struct {
+	hellos string
+	his    string
+}
+
+// func (t *Book) Books() string {
+// 	return fmt.Sprintf("%v %v", t.hellos, t.his)
+// }
+
+func readBooks(class Book) {
+	fmt.Println(class.hellos, class.his)
+}
 
 func main() {
+
+	r := bufio.NewReader(os.Stdin)
+
+	sum := 0
+
+	readBooks(Book{hellos: "Hello", his: "hi"})
+
+	scanner := bufio.NewScanner(os.Stdin)
+	lines := 0
+	commands := 0
+
+	scanner.Scan()
+	for scanner.Scan() {
+		if strings.ToUpper(scanner.Text()) == "Q" {
+			break
+		} else {
+			text := strings.TrimSpace(scanner.Text())
+
+			switch text {
+			case hello:
+				commands += 1
+				fmt.Println("Hello")
+			case hi:
+				commands += 1
+				fmt.Println("Hi")
+			}
+
+			if text != "" {
+				lines += 1
+			}
+
+		}
+	}
+
+	fmt.Println("Lines \n", lines)
+	fmt.Println("Commands \n", commands)
+
+	for {
+		input, inputErr := r.ReadString(' ')
+		n := strings.TrimSpace(input)
+		if n == "" {
+			continue
+		}
+		num, conErr := strconv.Atoi(n)
+		if conErr != nil {
+			fmt.Println(conErr)
+		} else {
+			sum += num
+		}
+
+		if inputErr == io.EOF {
+			break
+		}
+		if inputErr != nil {
+			fmt.Println("Error Reading:", inputErr)
+		}
+	}
+	fmt.Printf("Sum: %v", sum)
+
+	readBooks := bufio.NewReader(os.Stdin)
+
+	character := os.Stdin
+
+	for {
+		inputBook, inputBookError := readBooks.ReadString(' ')
+		m := strings.TrimSpace(inputBook)
+		if m == "" {
+			continue
+		}
+
+		text, convertError := fmt.Println(character)
+
+		if convertError != nil {
+			fmt.Println(convertError)
+		} else {
+			fmt.Println(text)
+		}
+		if inputBookError == io.EOF {
+			break
+		}
+
+		if inputBookError != nil {
+			fmt.Println("Error Reading Books: %v", inputBookError)
+		}
+
+	}
+
+	fmt.Println("The Book are: %v", character)
 
 }
