@@ -28,4 +28,23 @@ const (
 
 func main() {
 	servers := []string{"darkstar", "aiur", "omicron", "w359", "baseline"}
+	fmt.Println(servers)
+	mapped := make(map[string]int)
+	mapped["darkstar, aiur"] = Online
+	println(mapped)
+
+	// fruits := []string{"Apple", "Orange", "Mango"}
+	maps := make(map[string]int)
+	maps["Apple"] = 1
+	maps["ornage"] = 2
+	fmt.Println(maps)
+
+	server := Online
+
+	for _, ch := range mapped {
+		server += ch
+	}
+
+	fmt.Println(server)
+
 }
