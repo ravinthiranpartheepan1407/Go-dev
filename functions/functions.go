@@ -47,6 +47,14 @@ func dataOut() string {
 	return "Hello"
 }
 
+func fruit(data string) string {
+	return data
+}
+
+func absolute(aa, bb int) int {
+	return aa + bb
+}
+
 func main() {
 	data := dataOut()
 	fmt.Println("Welcome", personName())
@@ -63,5 +71,11 @@ func main() {
 	fmt.Println("The output is", addOutput)
 	fmt.Println("The Squared Multiplied Number is", sqrmulOut)
 	fmt.Println("The message is ", data)
+
+	printAbsolute := absolute(5, 6)
+	fmt.Println("The printed absolute value", printAbsolute)
+
+	print := fruit("Apple")
+	fmt.Println("The printed fruit name", print)
 
 }

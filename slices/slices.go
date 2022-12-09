@@ -18,6 +18,31 @@ import "fmt"
 
 type Part string
 
+type Fruit struct {
+	quanity int
+	healthy string
+}
+
+type Player struct {
+	health    int
+	maxHealth int
+}
+
+func printHealth(healthBar int, input []int) int {
+	for i := 0; i < len(input); i++ {
+		output := input[i]
+		fmt.Println("Printed output", output)
+	}
+	return healthBar
+}
+
+func print(value string, data []int) {
+	for i := 0; i < len(data); i++ {
+		res := data[i]
+		fmt.Println("Printed data", res)
+	}
+}
+
 func assemblyType(assembly string, part []string) {
 	for i := 0; i < len(part); i++ {
 		out := part[i]
@@ -39,6 +64,14 @@ func main() {
 	fmt.Println("Part 2", assemblyPart)
 	assemblyPart3 := assemblyPart[3:]
 	fmt.Println("Part 3 :", assemblyPart3)
+
+	printHealthBar := []int{95, 100, 95, 58}
+	printHealth(10, printHealthBar[:2])
+	printSecondHealth := printHealthBar[1:3]
+	printHealth(20, printSecondHealth)
+
+	fruitPrint := []int{10, 20, 30, 40, 50}
+	print("Mango", fruitPrint)
 
 	fruitNames := []string{"Watermelon", "Banana", "Strawberry"}
 	fruitTotal("Fruit", fruitNames)

@@ -49,7 +49,7 @@ func adminRole(a int) int {
 	return a
 }
 
-func guestRole(g int) int{
+func guestRole(g int) int {
 	return g
 }
 
@@ -57,8 +57,40 @@ func weekdays(days int) bool {
 	return days <= 4
 }
 
-func fruitTaste(taste int) int {
-	return taste <= 0
+// func fruitTaste(taste int) int {
+// 	return taste <= 0
+// }
+
+const (
+	apple      = "sweet"
+	mango      = "sour"
+	strawberry = "sweet"
+	avacado    = "butter"
+)
+
+const (
+	appleQuantity      = 10
+	mangoQuantity      = 20
+	strawberryQuantity = 15
+	avacadoQuantity    = 30
+)
+
+func check(fruitType string, quantity int) {
+	if fruitType == "apple" && quantity == appleQuantity {
+		fmt.Println("Apple Selected")
+	} else {
+		fmt.Println("Condition False")
+	}
+}
+
+func fruitReturn(input string, quantity int) bool {
+	if input != mango && quantity == 20 {
+		fmt.Println("Printed True")
+		return true
+	} else {
+		fmt.Println("Printed False")
+		return false
+	}
 }
 
 func main() {
@@ -72,24 +104,28 @@ func main() {
 	// 	accessDenied()
 	// }
 
+	check("apple", appleQuantity)
+
+	fruitReturn("mango", mangoQuantity)
+
 	today, role := Thursday, Contractor
 
-	if(role == Admin || role == Manager){
+	if role == Admin || role == Manager {
 		accessGranted()
-	} else if(role == Contractor && !weekdays(today)){
+	} else if role == Contractor && !weekdays(today) {
 		accessGranted()
-	}else{
+	} else {
 		accessDenied()
 	}
 
-	fruit := apple
-	tastes := 0
+	// apple :=
+	// fruit := apple
+	// tastes := 0
 
-
-	if(fruit == "apple" && fruitTaste(tastes)){
-		fmt.Println("The fruit is tasty")
-	}else{
-		fmt.Println("The Fruit is not sweet")
-	}
+	// if(fruit == "apple" && fruitTaste(tastes)){
+	// 	fmt.Println("The fruit is tasty")
+	// }else{
+	// 	fmt.Println("The Fruit is not sweet")
+	// }
 
 }

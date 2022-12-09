@@ -18,16 +18,29 @@ func main() {
 
 	integer := 1
 
-	for i := 0; i < 50; i++{
+	for i := 0; i < 50; i++ {
 		fizz := integer + i
-		if(fizz % 3 == 0){
+		if fizz%3 == 0 {
 			fmt.Println("Fizz")
-		} else if(fizz % 5 == 0){
+		} else if fizz%5 == 0 {
 			fmt.Println("Buzz")
-		} else if(fizz % 3 == 0 && fizz % 5 == 0){
+		} else if fizz%3 == 0 && fizz%5 == 0 {
 			fmt.Println("FizzBuzz")
-		}else{
+		} else {
 			fmt.Println("There is an error")
-		}		
+		}
+	}
+
+	fruit := 1
+
+	for j := 0; j < 50; j++ {
+		print := fruit + j
+		if print%2 == 0 {
+			fmt.Println("Even Fruits")
+		} else if print%4 == 0 {
+			fmt.Println("Even 4 Fruits")
+		} else {
+			fmt.Println("Fruit out of bound")
+		}
 	}
 }

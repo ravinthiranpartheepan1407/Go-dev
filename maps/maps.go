@@ -26,7 +26,30 @@ const (
 	Retired     = 3
 )
 
+type Player struct {
+	health int
+}
+
+func playerHealth(data Player) int {
+	return data.health
+}
+
 func main() {
+
+	healthBar := []int{95, 100}
+	fmt.Println(healthBar)
+
+	out := playerHealth(Player{health: healthBar[0]})
+	fmt.Println(out)
+
+	healthMap := make(map[string]int)
+	// healthMaps := map[string]int{
+	// 	"Player A": healthBar[0],
+	// 	"Player B": healthBar[1],
+	// }
+	healthMap["Player A"] = out
+	fmt.Println("Player A Health:", healthMap)
+
 	servers := []string{"darkstar", "aiur", "omicron", "w359", "baseline"}
 	fmt.Println(servers)
 	mapped := make(map[string]int)

@@ -2,7 +2,20 @@ package main
 
 import "fmt"
 
+func rangeCheck() {
+	data := []string{"Apple", "Mango", "Strawberry"}
+	for i, values := range data {
+		fmt.Println(i, values)
+		for _, split := range values {
+			fmt.Printf("%q", split)
+		}
+	}
+}
+
 func main() {
+
+	rangeCheck()
+	// %q split double quotes into runes
 	fruit := []string{"Watermelon", "Banana", "Kiwi"}
 	fmt.Println(fruit)
 	for index, element := range fruit {

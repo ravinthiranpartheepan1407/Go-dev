@@ -37,6 +37,15 @@ func setPrice(pricez [4]Shopping) {
 	}
 }
 
+type Fruits struct {
+	types   string
+	quanity int
+}
+
+func validateFruit(data [3]Fruits) {
+	fmt.Println(data)
+}
+
 func sum(total [4]Shopping) {
 	fmt.Println(total)
 }
@@ -64,6 +73,14 @@ func main() {
 		{name: "productc"},
 		{name: "productd"},
 	}
+
+	fruit := [...]Fruits{
+		{types: "Mango", quanity: 20},
+		{types: "Apple", quanity: 10},
+		{types: "Strawberry", quanity: 30},
+	}
+
+	validateFruit(fruit)
 
 	prices := [...]Shopping{
 		{price: 25},

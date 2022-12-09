@@ -43,4 +43,7 @@ func main() {
 
 	fmt.Println("The output is", dobOut)
 
+	data, value := 1, "Color"
+	fmt.Println("Data value", data)
+	fmt.Println("Value Index", value)
 }

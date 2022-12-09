@@ -24,6 +24,15 @@ type Rectangle struct {
 	width  int
 }
 
+type Fruit struct {
+	types    string
+	quantity int
+}
+
+func print(data Fruit) {
+	fmt.Println(data.types, data.quantity)
+}
+
 func rectangle(class Rectangle) {
 	fmt.Println(class.length * class.width)
 
@@ -59,4 +68,6 @@ func main() {
 	perimeter((Rectangle{length: 7, width: 7}))
 
 	insertName(Name{first: "Suren", last: "Ravi"})
+
+	print(Fruit{types: "Mango", quantity: 20})
 }

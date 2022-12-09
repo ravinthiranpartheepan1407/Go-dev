@@ -18,6 +18,32 @@ package main
 
 import "fmt"
 
+type Fruits struct {
+	types string
+}
+
+type Sold struct {
+	typeSold       Fruits
+	typeQuantities Quanity
+	hasSold        bool
+}
+
+type Quanity struct {
+	quantity int
+}
+
+func createFruit(data *Fruits) string {
+	return data.types
+}
+
+func listQuantities(qty *Quanity) int {
+	return qty.quantity
+}
+
+func checkIfSold(sol *Sold) any {
+	return sol
+}
+
 type Items struct {
 	items    string
 	security bool
@@ -56,4 +82,22 @@ func deactivate(deact *Items) {
 func main() {
 	out := activate()
 	fmt.Println(out)
+
+	fruitData := []string{"Apple", "Orange"}
+	fruitQuantity := []int{10, 25}
+	fruitSold := []bool{true, false}
+
+	outFruit := createFruit(&Fruits{types: fruitData[0]})
+	outQuantity := listQuantities(&Quanity{quantity: fruitQuantity[1]})
+	outSold := checkIfSold(&Sold{typeSold: Fruits{types: fruitData[0]}, typeQuantities: Quanity{quantity: fruitQuantity[1]}, hasSold: fruitSold[0]})
+	fmt.Println("Fruit:", outFruit)
+	fmt.Println("Quantity:", outQuantity)
+	fmt.Println("Sold?", outSold)
+
+	outFruits := createFruit(Fruits{types: fruitData[0]})
+	outQuantitys := listQuantities(Quanity{quantity: fruitQuantity[1]})
+	outSolds := checkIfSold(Sold{typeSold: Fruits{types: fruitData[0]}, typeQuantities: Quanity{quantity: fruitQuantity[1]}, hasSold: fruitSold[0]})
+	fmt.Println("Fruit:", outFruits)
+	fmt.Println("Quantity:", outQuantitys)
+	fmt.Println("Sold?", outSolds)
 }

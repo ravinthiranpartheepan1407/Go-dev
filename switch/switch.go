@@ -14,47 +14,64 @@ package main
 import "fmt"
 
 // const (
-// 	newborn 
-// 	child 
-// 	toddler 
-// 	adult 
-// ) 
+// 	newborn
+// 	child
+// 	toddler
+// 	adult
+// )
 
-
-func newBorn(newborn int) bool{
+func newBorn(newborn int) bool {
 	return newborn == 0
 }
 
 func todDler(toddler int) int {
-	if(toddler>1 && toddler<=3){
+	if toddler > 1 && toddler <= 3 {
 		return toddler
-	}else{
+	} else {
 		return 0
 	}
 }
 
 func chIld(child int) int {
-	if(child >=4 && child <=12){
+	if child >= 4 && child <= 12 {
 		return child
-	}else{
+	} else {
 		return 0
 	}
 }
 
-func adUlt(adult int) int{
-	if(adult >= 18){
+func adUlt(adult int) int {
+	if adult >= 18 {
 		return adult
-	}else{
+	} else {
 		return 0
+	}
+}
+
+func fruitType(input string) string {
+	if input == "mango" {
+		return input
+	} else {
+		return "Something else printed"
 	}
 }
 
 func main() {
+
+	print := fruitType("mango")
+	switch print {
+	case print:
+		fmt.Println(print)
+		break
+	default:
+		break
+	}
+
 	age := adUlt(22)
 	fmt.Println("The age is", age)
-	switch age{
-	
-	case age :
+	switch age {
+
+	case age:
 		// if(age >= adUlt(22)){
 		// 	fmt.Println("True")
 		// }else{
@@ -63,10 +80,8 @@ func main() {
 		fmt.Println(age)
 		fmt.Println("Adult")
 
-	default : 
+	default:
 		fmt.Println("Noting Detected")
 	}
 
-
-		
 }
