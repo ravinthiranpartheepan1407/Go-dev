@@ -31,6 +31,30 @@ type ParseError struct {
 	input string
 }
 
+// type Developer struct {
+// 	solidity string
+// 	golang   string
+// 	rust     string
+// }
+
+// type DeveloperTest struct {
+// 	msg  string
+// 	data string
+// }
+
+// func (d *DeveloperTest) getDeveloperError() string {
+// 	return fmt.Sprintf("%v", d.msg, d.data)
+// }
+
+// func CheckAvailableDeveloper(data string) (Developer, error) {
+// 	devData := strings.Split(data, ":")
+// 	if len(devData) != 3 {
+// 		return Developer{}, &DeveloperTest{"Invalid Developed Selected", data}
+// 	} else {
+// 		devJob, err :=
+// 	}
+// }
+
 func (t *ParseError) Error() string {
 	return fmt.Sprintf("%v: %v", t.msg, t.input)
 }

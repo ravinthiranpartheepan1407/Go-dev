@@ -34,7 +34,26 @@ func playerHealth(data Player) int {
 	return data.health
 }
 
+type Programming struct {
+	solidity string
+	golang   string
+	rust     string
+}
+
+func programmingSkills(programming Programming) string {
+	return programming.golang
+}
+
 func main() {
+
+	programmingPoints := []string{"Ethereum", "Go-Routines", "Cargo"}
+	codePoints := make(map[string]string)
+	codePoints["Solidity"] = "Polygon"
+	codePoints["Rust"] = "Cargo"
+	codePoints["Golang"] = "Go-Routines"
+
+	fmt.Println("The programming points are:", programmingPoints)
+	fmt.Println("The mapped points are:", codePoints)
 
 	healthBar := []int{95, 100}
 	fmt.Println(healthBar)

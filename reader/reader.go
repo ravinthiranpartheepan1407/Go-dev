@@ -128,11 +128,11 @@ func main() {
 		}
 
 		if inputBookError != nil {
-			fmt.Println("Error Reading Books: %v", inputBookError)
+			fmt.Println("Error Reading Books", inputBookError)
 		}
 
 	}
 
-	fmt.Println("The Book are: %v", character)
+	fmt.Println("The Book are", character)
 
 }

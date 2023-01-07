@@ -19,6 +19,12 @@ package main
 
 import "fmt"
 
+type ProgrammingLanguages struct {
+	solidity string
+	golang   string
+	rust     string
+}
+
 type Rectangle struct {
 	length int
 	width  int
@@ -27,6 +33,10 @@ type Rectangle struct {
 type Fruit struct {
 	types    string
 	quantity int
+}
+
+func programmingPrint(code ProgrammingLanguages) {
+	fmt.Println(code.solidity, code.golang, code.rust)
 }
 
 func print(data Fruit) {
@@ -70,4 +80,6 @@ func main() {
 	insertName(Name{first: "Suren", last: "Ravi"})
 
 	print(Fruit{types: "Mango", quantity: 20})
+
+	programmingPrint(ProgrammingLanguages{solidity: "ETH", golang: "Go-Routines", rust: "Cargo"})
 }

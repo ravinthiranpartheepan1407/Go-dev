@@ -17,6 +17,38 @@ package main
 
 import "fmt"
 
+const (
+	golang   = 0
+	rust     = 1
+	solidity = 2
+)
+
+const (
+	blockchainDev = 50000
+	rustDev       = 50000
+	solidityDev   = 45000
+)
+
+func golangDevGranted() {
+	fmt.Println("Golang IDE")
+}
+
+func rustDevGranted() {
+	fmt.Println("Rust::Cargo")
+}
+
+func solidityDevGranted() {
+	fmt.Println("Solidity:ERC20")
+}
+
+func ideAcccessCheck(a int) int {
+	return a
+}
+
+func positionAccessCheck(b int) int {
+	return b
+}
+
 // Days of the week
 const (
 	Monday    = 0

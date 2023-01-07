@@ -12,9 +12,22 @@ func rangeCheck() {
 	}
 }
 
+func programmingCheck() {
+	programming := []string{"Solidity", "Golang", "Rust"}
+	for i, split := range programming {
+		fmt.Println(i, split)
+		for _, check := range split {
+			fmt.Printf("%q \n", check)
+		}
+	}
+}
+
 func main() {
 
 	rangeCheck()
+
+	programmingCheck()
+
 	// %q split double quotes into runes
 	fruit := []string{"Watermelon", "Banana", "Kiwi"}
 	fmt.Println(fruit)

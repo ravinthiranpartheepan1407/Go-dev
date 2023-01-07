@@ -14,9 +14,24 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Calculation int
+
+type Programming struct {
+	name  string
+	value int
+}
+
+const (
+	solidity = iota + 2
+	golang
+	rust
+	typescript
+	python
+)
 
 const (
 	add Calculation = iota
@@ -24,6 +39,29 @@ const (
 	multiply
 	divide
 )
+
+type Fruit int
+
+const (
+	apple = iota
+	_
+	_
+	mango
+	strawberry
+)
+
+func (fruit Fruit) checkModulus(data int) int {
+	switch fruit {
+	case apple:
+		return data
+	}
+	panic("Unhandled Error")
+}
+
+func (p Programming) codeSkills() {
+	// return []string{"Solidity", "Golang", "Rust", "Typescript", "Python"}[p]
+	fmt.Println(p.name, p.value)
+}
 
 func (calc Calculation) total(a, b int) int {
 	switch calc {
@@ -44,10 +82,16 @@ func (calc Calculation) total(a, b int) int {
 
 func main() {
 
+	fruito := Fruit(apple)
+	fmt.Println(fruito.checkModulus(0))
+
 	addition := Calculation(add)
 	subtraction := Calculation(subtract)
 	multiplication := Calculation(multiply)
 	division := Calculation(divide)
+
+	apples := apple
+	fmt.Println(apples)
 
 	fmt.Println(addition.total(2, 2)) // = 4
 
@@ -56,4 +100,18 @@ func main() {
 	fmt.Println(multiplication.total(3, 3)) // = 9
 
 	fmt.Println(division.total(100, 2)) // = 50
+
+	code := golang
+	fmt.Println(code)
+
+	coded := Programming{
+		name:  "Golang",
+		value: golang,
+	}
+
+	coded.codeSkills()
+}
+
+func checkModulus(apple int) {
+	panic("unimplemented")
 }

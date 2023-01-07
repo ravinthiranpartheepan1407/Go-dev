@@ -19,6 +19,10 @@ package main
 
 import "fmt"
 
+const (
+	experiencedWarriors = 50000
+)
+
 func personName() string {
 	return "ravi"
 }
@@ -55,7 +59,24 @@ func absolute(aa, bb int) int {
 	return aa + bb
 }
 
+func block(web3, web4 int) int {
+	return web3 + web4
+}
+
+func totalWarriors(youngWarriors int) int {
+	return youngWarriors + experiencedWarriors
+}
+
+func youngWarriorsClan(youngWarriors int) int {
+	return youngWarriors
+}
 func main() {
+
+	youngSullys := youngWarriorsClan(35000)
+	totalNaviWarriros := totalWarriors()
+	fmt.Println("Total warriors sully has so far:", totalNaviWarriros)
+	fmt.Println("Young warriors in sully's clan:", youngSullys)
+
 	data := dataOut()
 	fmt.Println("Welcome", personName())
 
@@ -77,5 +98,7 @@ func main() {
 
 	print := fruit("Apple")
 	fmt.Println("The printed fruit name", print)
+
+	fmt.Println("The printed number", block(4, 3))
 
 }

@@ -29,6 +29,26 @@ type Motorcycles string
 type Cars string
 type Trucks string
 
+type GetDeveloper interface {
+	getDevJob()
+}
+
+type Solidity string
+type Golang string
+type Rust string
+
+func (g Golang) getDevJob() {
+	fmt.Println("Golang Developer")
+}
+
+func (s Solidity) getDevJob() {
+	fmt.Println("Solidity Developer")
+}
+
+func (r Rust) getDevJob() {
+	fmt.Println("Rust Developer")
+}
+
 func (m Motorcycles) available() {
 	// data := "Hero Honda"
 	// fmt.Printf("The Motorcycle model is(%v)", data)
@@ -56,9 +76,20 @@ func handleVehicle(details []Shop) {
 	}
 }
 
+func iterateDeveloper(developer []GetDeveloper) {
+	for i := 0; i < len(developer); i++ {
+		dev := developer[i]
+		fmt.Printf("The required blockchain developers for this project (%v)", dev)
+		dev.getDevJob()
+	}
+}
+
 func main() {
 
 	out := []Shop{Motorcycles("Hero Honda"), Cars("Baleno"), Trucks("Lorry")}
 	handleVehicle(out)
+
+	devResult := []GetDeveloper{Solidity("Ethereum"), Golang("Go-Routines"), Rust("Cargo")}
+	iterateDeveloper(devResult)
 
 }

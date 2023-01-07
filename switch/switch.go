@@ -20,6 +20,42 @@ import "fmt"
 // 	adult
 // )
 
+const (
+	avatarTotalTickets = 150
+)
+
+func checkTicketAvailability(peopleReserved int) int {
+	reserved := avatarTotalTickets - peopleReserved
+	return reserved
+}
+
+func checkMyStanding(standingInQueue int) int {
+	return standingInQueue
+}
+
+func checkPeopleInlineCount(peopleInline int) int {
+	return peopleInline
+}
+
+func totlalavailablity() {
+	checkTixBalance := checkTicketAvailability(50)
+	checkStanding := checkMyStanding(7)
+	checkPeopleStand := checkPeopleInlineCount(50)
+
+	if checkTixBalance < 150 && checkStanding < checkPeopleStand {
+		fmt.Println("Alright, I standing in the ticket availability index")
+	} else {
+		fmt.Println("You can go for another movie")
+	}
+
+	switch checkStanding {
+	case checkStanding:
+		fmt.Println("Hurray! I got the tickets")
+	default:
+		fmt.Println("Bruhhh! okay Lets go for another movie")
+	}
+}
+
 func newBorn(newborn int) bool {
 	return newborn == 0
 }
@@ -57,6 +93,8 @@ func fruitType(input string) string {
 }
 
 func main() {
+
+	totlalavailablity()
 
 	print := fruitType("mango")
 	switch print {

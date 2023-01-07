@@ -12,6 +12,8 @@
 //--Notes:
 //* Your program output should list 3 parts, then 5 parts, then 2 parts
 
+// Make used to reallocate size
+
 package main
 
 import "fmt"
@@ -26,6 +28,21 @@ type Fruit struct {
 type Player struct {
 	health    int
 	maxHealth int
+}
+
+type BlockchainDevPath struct {
+	path1 string
+	path2 string
+	path3 string
+}
+
+// segmentSlices := make([] string, 4)
+
+func blockchainPath(route string, segment []string) {
+	for i := 0; i < len(segment); i++ {
+		pathway := segment[i]
+		fmt.Println(pathway)
+	}
 }
 
 func printHealth(healthBar int, input []int) int {
@@ -57,6 +74,20 @@ func fruitTotal(name string, fruit []string) {
 	}
 }
 
+func checkShoes(shoe []string) {
+	for i := 0; i < len(shoe); i++ {
+		shoes := shoe[i]
+		// if shoe[0] == "GroupA" && shoe[2] == "GroupC" {
+		// 	fmt.Println("Shoes for players with foot size 6 and 7")
+		// } else if shoe[1] == "GroupB" {
+		// 	fmt.Println("Shoes for players with foot size: 9")
+		// } else {
+		// 	fmt.Println(shoes)
+		// }
+		fmt.Println(shoes)
+	}
+}
+
 func main() {
 	assemblyPart := []string{"First Part", "Second Part", "Third Part"}
 	assemblyType("Part 1", assemblyPart)
@@ -79,4 +110,15 @@ func main() {
 	fmt.Println("Added Fruits:", fruitNames)
 	fruitCutted := fruitNames[1:]
 	fmt.Println("Cutted Fruits:", fruitCutted)
+
+	blockPathway := []string{"Solidity", "Golang", "Rust"}
+	blockchainPath("Path A:", blockPathway[:1])
+
+	blockPathwayAppend := append(blockPathway, "Typescript", "Javascript", "Python")
+	blockchainPath("Overall Pathway:", blockPathwayAppend)
+
+	playersFootSize := []string{"GroupA", "GroupB", "GroupC"}
+
+	checkShoes(playersFootSize[:1])
+
 }

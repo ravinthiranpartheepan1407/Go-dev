@@ -43,4 +43,16 @@ func main() {
 			fmt.Println("Fruit out of bound")
 		}
 	}
+
+	count := 0
+	seconds := 0
+	for i := 0; i < 150; i++ {
+		message := count + 1
+		second := seconds + 1
+		if message == second {
+			fmt.Println("Yeah I have apologized only for", i)
+		} else {
+			fmt.Println("Okay I will get a slap from you!")
+		}
+	}
 }

@@ -18,6 +18,12 @@ import "fmt"
 
 // type Name string
 
+type Fruit struct {
+	types    string
+	quantity int
+	sold     bool
+}
+
 type Player struct {
 	name              string
 	health, maxHealth uint
@@ -28,6 +34,40 @@ type Player struct {
 // 	maxHealth map[Player]Name
 // 	maxEnergy map[Player]Name
 // }
+
+type ProgrammingSkills struct {
+	name       string
+	experience string
+}
+
+type Groceries struct {
+	itemName string
+	category string
+}
+
+// receiver function by value
+func (g Groceries) shopItems(shop Groceries) Groceries {
+	return Groceries{shop.itemName, g.category}
+}
+
+// receiver function by pointer
+func (coded *ProgrammingSkills) programming() {
+	fmt.Println(coded.name)
+	if coded.name == "Golang" {
+		fmt.Println("Go Programming Language")
+	} else {
+		fmt.Println("Learn Rust Alternatively")
+	}
+}
+
+func (fruit *Fruit) createSales() any {
+	if fruit.types == "Apple" {
+		fmt.Println("Printed", fruit.types)
+	} else {
+		fmt.Println("Something else printed")
+	}
+	return fruit
+}
 
 func (player *Player) statistics(value uint) {
 	player.health += value
@@ -66,8 +106,24 @@ func main() {
 		maxEnergy: 500,
 	}
 
+	fruit := Fruit{
+		types:    "Orange",
+		quantity: 20,
+		sold:     true,
+	}
+
+	fruit.createSales()
+
 	player.statistics(20)
 	player.damage(5)
 	player.energys(10)
 
+	code := ProgrammingSkills{
+		name:       "Golang",
+		experience: "JS or Python Previous Python Required",
+	}
+	code.programming()
+
+	shopping := Groceries{"Carbonara", "Pasta"}
+	fmt.Println(shopping)
 }

@@ -59,11 +59,42 @@ type Cart struct {
 	available bool
 }
 
+type Programming struct {
+	solidity string
+	golang   string
+	rust     string
+}
+
+func programmingCheck(programmingcheck [7]Programming) {
+	for i := 0; i < len(programmingcheck); i++ {
+		programmingchecks := programmingcheck[i]
+		fmt.Println(programmingchecks)
+	}
+}
+
 func cartAvailable(cart [4]Cart) {
 	for k := 0; k < len(cart); k++ {
 		carts := cart[k]
 		fmt.Println(carts)
 	}
+}
+
+type IcecreamMachine struct {
+	iceCreamName string
+	iceCreamType string
+}
+
+func getChocolateIceCream(icecream [4]IcecreamMachine) {
+	for i := 0; i < len(icecream); i++ {
+		icecreams := icecream[i]
+		getChocolate := icecreams.iceCreamName
+		if getChocolate == "Chocolate" {
+			fmt.Println("Got Chocolcate Ice Cream")
+		} else {
+			fmt.Println("Not able to find the chocolate flavor")
+		}
+	}
+	fmt.Println(icecream)
 }
 
 func main() {
@@ -72,6 +103,16 @@ func main() {
 		{name: "productb"},
 		{name: "productc"},
 		{name: "productd"},
+	}
+
+	programming := [...]Programming{
+		{solidity: "Ethereum"},
+		{golang: "Go-Routines"},
+		{rust: "Cargo"},
+		{solidity: "Polygon"},
+		{golang: "Concurrent"},
+		{rust: "Anchor"},
+		{solidity: "Solana"},
 	}
 
 	fruit := [...]Fruits{
@@ -101,6 +142,18 @@ func main() {
 	cartAvailable(carts)
 	fmt.Println(carts[1])
 
+	programmingCheck(programming)
+	fmt.Println(programming[2])
+
 	total(Shopping{price: 25})
+
+	icecreamMetadata := [...]IcecreamMachine{
+		{iceCreamName: "Vanilla", iceCreamType: "vanilla Flavor"},
+		{iceCreamName: "Butterscotch", iceCreamType: "Butterscotch Flavor"},
+		{iceCreamName: "Chocolate", iceCreamType: "Chocolate Flavor"},
+		{iceCreamName: "Mango", iceCreamType: "Mango Flavor"},
+	}
+
+	getChocolateIceCream(icecreamMetadata)
 
 }

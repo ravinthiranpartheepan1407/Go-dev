@@ -28,6 +28,8 @@ func main() {
 	var color string = "red"
 	dobYear, dobAge := 1997, 25
 
+	web3, web4 := "blockchain", "IOT"
+
 	// var (
 	// 	firstInitial,
 	// 	lastInitial
@@ -46,4 +48,6 @@ func main() {
 	data, value := 1, "Color"
 	fmt.Println("Data value", data)
 	fmt.Println("Value Index", value)
+
+	fmt.Println(web3, web4)
 }

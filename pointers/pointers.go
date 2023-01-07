@@ -22,6 +22,12 @@ type Fruits struct {
 	types string
 }
 
+type Programming struct {
+	solidity string
+	golang   string
+	rust     string
+}
+
 type Sold struct {
 	typeSold       Fruits
 	typeQuantities Quanity
@@ -30,6 +36,15 @@ type Sold struct {
 
 type Quanity struct {
 	quantity int
+}
+
+func programmingType(code *Programming) string {
+	return code.golang
+}
+
+func setProgramming(codes *string, new string, code *Programming) {
+	*codes = new
+	programmingType(code)
 }
 
 func createFruit(data *Fruits) string {
@@ -60,14 +75,14 @@ func itemList(class Items) {
 
 func activate(act *Items) {
 	itemString := make(map[string]int)
-	itemString["Item A"]
-	itemString["Item B"]
-	itemString["Item C"]
-	itemString["Item D"]
+	itemString["Item A"] = 0
+	itemString["Item B"] = 1
+	itemString["Item C"] = 2
+	itemString["Item D"] = 3
 	itemList(Items{items: "Golang"})
 	print(itemString)
 
-	activation = &security
+	// activation = &security
 	activation := act.security
 	activation = true
 	act.security = activation
@@ -75,13 +90,42 @@ func activate(act *Items) {
 	fmt.Println(result)
 }
 
-func deactivate(deact *Items) {
-	delete(Items.items)
-}
+// func deactivate(deact *Items) {
+// 	delete(Items.items)
+// }
+
+// type FoodMenu struct {
+// 	food         string
+// 	price        string
+// 	availability string
+// }
+
+// func checkFoodAvailability(available FoodMenu) string {
+// 	return "Menu" + ":" + available.availability
+// }
+
+// func foodMenu(foodOrder FoodMenu) string {
+// 	return foodOrder.food
+// }
+
+// func createTodayFoodAvailability() {
+// 	create := FoodMenu{
+// 		food:         "Carbonara Pasta",
+// 		price:        "$15",
+// 		availability: "Available",
+// 	}
+// 	fmt.Println(checkFoodAvailability(FoodMenu{availability: create.availability}))
+// 	fmt.Println(foodMenu(FoodMenu{food: create.food}) + ":" + "  " + "Price" + "  " + create.price)
+// }
 
 func main() {
 	out := activate()
 	fmt.Println(out)
+	programming := Programming{solidity: "Ethereum", golang: "go-routines", rust: "cargo"}
+	codeData := programmingType(&programming)
+	setProgramming(&codeData, "Cosmos SDK", &programming)
+	fmt.Println(programming)
+	fmt.Println(codeData)
 
 	fruitData := []string{"Apple", "Orange"}
 	fruitQuantity := []int{10, 25}
@@ -100,4 +144,6 @@ func main() {
 	fmt.Println("Fruit:", outFruits)
 	fmt.Println("Quantity:", outQuantitys)
 	fmt.Println("Sold?", outSolds)
+
+	// createTodayFoodAvailability()
 }
